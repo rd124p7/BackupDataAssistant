@@ -7,3 +7,12 @@ C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\DataAssistant\
 C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\DataAssistant\obj\Debug\DataAssistant.csproj.GenerateResource.Cache
 C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\DataAssistant\obj\Debug\DataAssistant.exe
 C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\DataAssistant\obj\Debug\DataAssistant.pdb
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\bin\Debug\DataAssistant.exe.config
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.exe
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.pdb
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\bin\Debug\DataAssistant.exe
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\bin\Debug\DataAssistant.pdb
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.Form1.resources
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.Properties.Resources.resources
+C:\Users\Ryan\Documents\Visual Studio 2015\Projects\DataAssistant\BackupDataAssistant\DataAssistant\obj\Debug\DataAssistant.csproj.GenerateResource.Cache
