@@ -39,7 +39,7 @@ namespace DataAssistant.DetectDrives
         /**
             Method Name: GetDeviceLetter
             Description: 
-                Returns the name (letter: C:\) of the removable device that is plugged in
+                Returns the name (letter: E:\) of the removable device that is plugged in
                 
             Params: None
             Returns: letter -> string   
@@ -57,6 +57,30 @@ namespace DataAssistant.DetectDrives
                     
             }
             return letter;
+        }
+
+        /**
+            Method Name: GetHDDLetters
+            Description:
+                Returns the name of all hard drives that are detected and are NTFS format
+
+            Params: None
+            Returns: letters -> List<string>
+        **/
+        public List<string> GetHDDLetters()
+        {
+            List<string> letters = new List<string>();
+
+            foreach(DriveInfo di in DriveInfo.GetDrives())
+            {
+                if(di.DriveType == DriveType.Fixed)
+                {
+                    if (di.DriveFormat == "NTFS")
+                        letters.Add(di.Name);
+                }
+            }
+
+            return letters;
         }
 
         /**

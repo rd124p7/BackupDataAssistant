@@ -50,6 +50,11 @@ namespace DataAssistant
             lblFreeSpace.Text = String.Format("Free Space: {0}", dev.ConvertSize(dev.GetDevFreeSpace()));
 
             lblTotalSpace.Text = String.Format("Total Size: {0}", dev.ConvertSize(dev.GetDevTotalSize()));
+
+            for (int i = 0; i < dev.GetHDDLetters().Count; i++)
+            {
+                lblFixedDrives.Text += dev.GetHDDLetters()[i] + "  ";
+            }
         }
     }
 }

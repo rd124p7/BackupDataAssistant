@@ -57,6 +57,7 @@ namespace DataAssistant
             this.lblFreeSpace = new System.Windows.Forms.Label();
             this.lblTotalSpace = new System.Windows.Forms.Label();
             this.btnStartBackup = new System.Windows.Forms.Button();
+            this.lblFixedDrives = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBackupDrive
@@ -114,11 +115,21 @@ namespace DataAssistant
             this.btnStartBackup.Text = "Start Backup";
             this.btnStartBackup.UseVisualStyleBackColor = true;
             // 
+            // lblFixedDrives
+            // 
+            this.lblFixedDrives.AutoSize = true;
+            this.lblFixedDrives.Location = new System.Drawing.Point(13, 90);
+            this.lblFixedDrives.Name = "lblFixedDrives";
+            this.lblFixedDrives.Size = new System.Drawing.Size(71, 13);
+            this.lblFixedDrives.TabIndex = 6;
+            this.lblFixedDrives.Text = "Fixed Drives: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 120);
+            this.Controls.Add(this.lblFixedDrives);
             this.Controls.Add(this.btnStartBackup);
             this.Controls.Add(this.lblTotalSpace);
             this.Controls.Add(this.lblFreeSpace);
@@ -141,6 +152,7 @@ namespace DataAssistant
         private System.Windows.Forms.Label lblFreeSpace;
         private System.Windows.Forms.Label lblTotalSpace;
         private System.Windows.Forms.Button btnStartBackup;
+        private System.Windows.Forms.Label lblFixedDrives;
     }
 }
 
