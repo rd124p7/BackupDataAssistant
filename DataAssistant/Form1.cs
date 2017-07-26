@@ -58,7 +58,8 @@ namespace DataAssistant
 
 
             Backup.Split spl = new Backup.Split(dev.GetHDDLetters()[0]);
-            spl.splListsFoldersFiles();
+            for (int i = 0; i < spl.getFirstSectionFolder().Count; i++) Console.WriteLine(spl.getFirstSectionFolder()[i]);
+            for (int i = 0; i < spl.getLastSectionFolder().Count; i++) Console.WriteLine(spl.getLastSectionFolder()[i]);
         }
     }
 }
