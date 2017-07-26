@@ -55,6 +55,10 @@ namespace DataAssistant
             {
                 lblFixedDrives.Text += dev.GetHDDLetters()[i] + "  ";
             }
+
+
+            Backup.Split spl = new Backup.Split(dev.GetHDDLetters()[0]);
+            spl.splListsFoldersFiles();
         }
     }
 }
