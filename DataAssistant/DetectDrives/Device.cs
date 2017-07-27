@@ -50,7 +50,8 @@ namespace DataAssistant.DetectDrives
         /**
             Method Name: GetDeviceLetter
             Description: 
-                Returns the name (letter: E:\) of the removable device that is plugged in
+                Returns the name (letter: E:\) of the removable device that is plugged in it will check for the following
+                formats FAT32 or NTFS
                 
             Params: None
             Returns: letter -> string   
@@ -63,7 +64,8 @@ namespace DataAssistant.DetectDrives
             {
                 if(di.DriveType == DriveType.Removable)
                 {
-                    letter = di.Name;
+                    if(di.DriveFormat == "NTFS" || di.DriveFormat == "FAT32")
+                        letter = di.Name;
                 }
                     
             }
@@ -128,7 +130,7 @@ namespace DataAssistant.DetectDrives
                 Returns the total size of the removable device
 
             Params: None
-            Returns: DriveInfo.AvailableFreeSpace -> Int64
+            Returns: DriveInfo.TotalSize -> Int64
         **/
         public Int64 GetDevTotalSize()
         {

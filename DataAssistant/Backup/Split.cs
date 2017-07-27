@@ -64,6 +64,15 @@ namespace DataAssistant.Backup
             fileContents = Directory.GetFiles(this.hdd_name);
         }
 
+        #region
+        /**
+            Method Name: getFirstSectionFolder
+            Description: 
+                Get the first half of the folders on the root directory, add the folders to a List<string>
+
+            Params: None
+            Returns: temp -> List<string>
+        **/
         public List<string> getFirstSectionFolder()
         {
             List<string> temp = new List<string>();
@@ -74,6 +83,14 @@ namespace DataAssistant.Backup
             return temp;
         }
 
+        /**
+            Method Name: getLastSectionFolder
+            Description:
+                Get the last half of the folders on the root directory of the hdd, add the folders to a List<string>
+
+            Params: None
+            Returns: temp -> List<string>
+        **/
         public List<string> getLastSectionFolder()
         {
             List<string> temp = new List<string>();
@@ -84,6 +101,14 @@ namespace DataAssistant.Backup
             return temp;
         }
 
+        /**
+            Method Name: getFileSection
+            Description:
+                Get the files on the root directory of the hdd, add the files to a List<string>
+
+            Params: None
+            Returns: temp -> List<string>
+        **/
         public List<string> getFileSection()
         {
             List<string> temp = new List<string>();
@@ -93,5 +118,6 @@ namespace DataAssistant.Backup
 
             return temp;
         }
+        #endregion
     }
 }
