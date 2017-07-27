@@ -22,6 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/**
+    Class Name: DetectDrives
+    Constructor: DetectDrives
+    Inherits: None
+
+    Description: 
+        Get and return all the information that is needed to backup the drive(s),
+        including Get Backup drive letter, Get HDD letter, and get Backup Device Space
+**/
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +43,7 @@ using System.IO;
 
 namespace DataAssistant.DetectDrives
 {
-    class Device
+    public class Device
     {
         public Device() {}
         

@@ -41,7 +41,7 @@ using System.IO;
 
 namespace DataAssistant.Backup
 {
-    class Split
+    public class Split
     {
         private string hdd_name = "";
         private string[] dirContents = { };
