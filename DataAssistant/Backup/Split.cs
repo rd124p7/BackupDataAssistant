@@ -64,7 +64,10 @@ namespace DataAssistant.Backup
             fileContents = Directory.GetFiles(this.hdd_name);
         }
 
-        #region
+
+        #region Add_Files_Folders_Lists
+
+
         /**
             Method Name: getFirstSectionFolder
             Description: 
@@ -119,5 +122,25 @@ namespace DataAssistant.Backup
             return temp;
         }
         #endregion
+
+
+        #region Reorganize_FF_Lists
+
+        /**
+            Method Name: ffListCount
+            Description:
+                Returns an ushort array with Count of items from all of these methods getFirstSectionFolder, getLastSectionFolder, getFileSection
+
+            Params: None
+            Returns -> ushort[]
+        **/
+        public ushort[] ffListCount()
+        {
+            return new ushort[] { (ushort) getFirstSectionFolder().Count,  (ushort) getLastSectionFolder().Count, (ushort) getFileSection().Count};
+        }
+
+
+        #endregion
     }
+
 }
