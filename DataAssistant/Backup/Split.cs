@@ -47,6 +47,9 @@ namespace DataAssistant.Backup
         private string[] dirContents = { };
         private string[] fileContents = { };
 
+        //Define an anon method to calculate the tolerance of the Rearrange
+        private delegate int calcTolerance();
+
         /**
             Constructor: Split
             Description:
@@ -124,7 +127,7 @@ namespace DataAssistant.Backup
         #endregion
 
 
-        #region Reorganize_FF_Lists
+        #region Reorganize_FF_Lists_By_Number
 
         /**
             Method Name: ffListCount
@@ -139,6 +142,36 @@ namespace DataAssistant.Backup
             return new ushort[] { (ushort) getFirstSectionFolder().Count,  (ushort) getLastSectionFolder().Count, (ushort) getFileSection().Count};
         }
 
+        /**
+            Method Name: Rearrange
+            Description: 
+                Rearrange the lists so they have around an even amount of directories
+
+            Params:
+                firstSection : ref -> List<string>
+                midSection   : ref -> List<string>
+                lastSection  : ref -> List<string>             
+    
+            Returns: None
+        **/
+        public void Rearrange(ref List<string> firstSection, ref List<string> midSection, ref List<string> lastSection)
+        {
+
+            List<string> __firstSection = new List<string>();
+            List<string> __midSection = new List<string>();
+            List<string> __lastSection = new List<string>();
+            
+            calcTolerance tolerance = delegate()
+            {
+                ushort[] counts = ffListCount();
+                int _sumt = counts[0] + counts[1] + counts[2];
+                double _finalt = _sumt / 3;
+
+                return (int)Math.Ceiling(_finalt);
+            };
+
+
+        }
 
         #endregion
     }
