@@ -48,7 +48,7 @@ namespace DataAssistant.Backup
         private string[] fileContents = { };
 
         //Define an anon method to calculate the tolerance of the Rearrange
-        private delegate int calcTolerance();
+        private delegate double calcTolerance();
 
         /**
             Constructor: Split
@@ -143,6 +143,23 @@ namespace DataAssistant.Backup
         }
 
         /**
+            Method Name: compileLists
+            Description:
+                Compile all the list with Folders and Files into one big List
+
+            Params: None
+            Returns List<List<string>>
+        **/
+        public List<List<string>> compileLists()
+        {
+
+
+
+            return new List<List<string>>();
+        }
+
+
+        /**
             Method Name: Rearrange
             Description: 
                 Rearrange the lists so they have around an even amount of directories
@@ -154,23 +171,33 @@ namespace DataAssistant.Backup
     
             Returns: None
         **/
-        public void Rearrange(ref List<string> firstSection, ref List<string> midSection, ref List<string> lastSection)
+        public void Rearrange(/*ref List<string> firstSection, ref List<string> midSection, ref List<string> lastSection*/)
         {
 
             List<string> __firstSection = new List<string>();
             List<string> __midSection = new List<string>();
             List<string> __lastSection = new List<string>();
-            
+
+            List<string> __mainSection = new List<string>();
+
+            //Calculate the number of items in each list
             calcTolerance tolerance = delegate()
             {
                 ushort[] counts = ffListCount();
-                int _sumt = counts[0] + counts[1] + counts[2];
+                double _sumt = counts[0] + counts[1] + counts[2];
                 double _finalt = _sumt / 3;
 
-                return (int)Math.Ceiling(_finalt);
+                return Math.Ceiling(_finalt) + 1;
             };
 
 
+
+
+            
+            
+
+
+            Console.WriteLine("Tolerance " + tolerance().ToString());
         }
 
         #endregion

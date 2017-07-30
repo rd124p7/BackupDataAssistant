@@ -65,6 +65,8 @@ namespace DataAssistant
             {
                 Console.WriteLine(spl.ffListCount()[i]);
             }
+
+            spl.Rearrange();
         }
     }
 }
