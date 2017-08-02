@@ -151,11 +151,8 @@ namespace DataAssistant.Backup
             Returns List<List<string>>
         **/
         public List<List<string>> compileLists()
-        {
-
-
-
-            return new List<List<string>>();
+        {   
+            return new List<List<string>> { getFirstSectionFolder(), getLastSectionFolder(), getFileSection() }; ;
         }
 
 
@@ -178,7 +175,9 @@ namespace DataAssistant.Backup
             List<string> __midSection = new List<string>();
             List<string> __lastSection = new List<string>();
 
-            List<string> __mainSection = new List<string>();
+            List<string> __main = new List<string>();
+            List<List<string>> compiledLists = compileLists();
+
 
             //Calculate the number of items in each list
             calcTolerance tolerance = delegate()
@@ -192,13 +191,40 @@ namespace DataAssistant.Backup
 
 
 
+            for(int i = 0; i < compiledLists.Count; i++)
+            {
+                for(int j = 0; j < compiledLists[i].Count; i++)
+                {
+                    __main.Add(compiledLists[i].ElementAt(j));
+                }
+            }
 
-            
-            
+            for(int i = 0; i < __main.Count; i++)
+            {
+                if(i < tolerance())
+                {
+                    __firstSection.Add(__main.ElementAt(i));
+                }
+                
+                if(i > tolerance() && i < tolerance() + tolerance())
+                {
+                    __midSection.Add(__main.ElementAt(i));
+                }
 
+                if (i > tolerance() + tolerance() && i < __main.Count)
+                {
+                    __lastSection.Add(__main.ElementAt(i));
+                }
+            }
 
             Console.WriteLine("Tolerance " + tolerance().ToString());
         }
+
+        #endregion
+
+
+        #region Rearrange_By_Size
+            
 
         #endregion
     }
