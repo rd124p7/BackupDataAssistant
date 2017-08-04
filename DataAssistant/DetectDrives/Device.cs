@@ -157,6 +157,22 @@ namespace DataAssistant.DetectDrives
         }
 
         /**
+            Method Name: isDevCapableOfHandlingThisAmountOfDataIfNotSoThenReturnFalse
+            Description:
+                See Method Name
+
+            Params: None
+            Returns -> bool
+        **/
+        public bool isDevCapableOFHandlingThisAmountOfDataIfNotSoThenReturnFalse()
+        {
+            if (GetDevTotalSize() <= GetDevFreeSpace())
+                return false;
+
+            return true;
+        }
+
+        /**
             Method Name: isDevReady
             Description:
                 Return wether the removable device is ready

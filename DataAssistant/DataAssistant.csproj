@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup\DoBackup.cs" />
     <Compile Include="Backup\Split.cs" />
     <Compile Include="DetectDrives\Device.cs" />
     <Compile Include="Form1.cs">

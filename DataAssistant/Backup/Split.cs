@@ -25,7 +25,7 @@ SOFTWARE.
 /**
     Class Name: Split
     Constructor: Split
-    Inherits: None
+    Inherits: Device
 
     Description: 
         Perform operations to split the contents of a hard drive and return the results,
@@ -41,7 +41,7 @@ using System.IO;
 
 namespace DataAssistant.Backup
 {
-    public class Split
+    public class Split : DetectDrives.Device
     {
         private string hdd_name = "";
         private string[] dirContents = { };
@@ -56,15 +56,14 @@ namespace DataAssistant.Backup
                 When a new Split instance is created pass in the letter of the hard drive,
                 then set instance variables dirContents and fileContents
 
-            Params: 
-                hdd_name -> string
+            Params: None
             Returns: None
         **/
-        public Split(string hdd_name)
+        public Split()
         {
-            this.hdd_name = hdd_name;
-            dirContents = Directory.GetDirectories(this.hdd_name);
-            fileContents = Directory.GetFiles(this.hdd_name);
+            hdd_name = GetDeviceLetter();
+            dirContents = Directory.GetDirectories(hdd_name);
+            fileContents = Directory.GetFiles(hdd_name);
         }
 
 
@@ -168,7 +167,7 @@ namespace DataAssistant.Backup
     
             Returns: None
         **/
-        public void Rearrange(/*ref List<string> firstSection, ref List<string> midSection, ref List<string> lastSection*/)
+        public void Rearrange(ref List<string> firstSection, ref List<string> midSection, ref List<string> lastSection)
         {
 
             List<string> __firstSection = new List<string>();
@@ -176,6 +175,7 @@ namespace DataAssistant.Backup
             List<string> __lastSection = new List<string>();
 
             List<string> __main = new List<string>();
+            compileLists();
             List<List<string>> compiledLists = compileLists();
 
 
@@ -193,7 +193,7 @@ namespace DataAssistant.Backup
 
             for(int i = 0; i < compiledLists.Count; i++)
             {
-                for(int j = 0; j < compiledLists[i].Count; i++)
+                for(int j = 0; j < compiledLists[i].Count; j++)
                 {
                     __main.Add(compiledLists[i].ElementAt(j));
                 }
@@ -217,16 +217,21 @@ namespace DataAssistant.Backup
                 }
             }
 
+
+            firstSection = __firstSection;
+            midSection = __midSection;
+            lastSection = __lastSection;
+
+            /*
             Console.WriteLine("Tolerance " + tolerance().ToString());
+
+            for (int i = 0; i < __lastSection.Count; i++)
+                Console.WriteLine(__lastSection.ElementAt(i) + "\t" + i);
+            */
         }
 
         #endregion
 
-
-        #region Rearrange_By_Size
-            
-
-        #endregion
     }
 
 }
